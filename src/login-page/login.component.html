@@ -1,0 +1,279 @@
+<div class="login-12 tab-box">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-7 col-md-12 bg-img">
+        <div class="informeson">
+          <div class="animated-text">
+            <h2>Welcome to our community</h2>
+          </div>
+          <p>
+            Fuse helps developers to build organized and well coded dashboards
+            full of beautiful and rich modules. Join us and start building your
+            application today.
+          </p>
+          <div class="avatar-list_container">
+            <ul class="avatar-list">
+              <li>
+                <img
+                  src="https://images.unsplash.com/photo-1715615245424-97d67b181c89?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="photo"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://images.unsplash.com/photo-1614769842925-8193ebda68b5?q=80&w=1427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="photo"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1664874603310-38700f53b9f4?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="photo"
+                />
+              </li>
+            </ul>
+            <span>Morethan 170K people Joined us, It's your Turn</span>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isloginPage" class="col-lg-5 col-md-12 form-section">
+        <div class="login-inner-form">
+          <div class="details">
+            <div>
+              <div class="main-logo">
+                <a href="#"><img src="./../assets/Outlook-syoft.com.png" /></a>
+              </div>
+              <h1>SignIn</h1>
+              <h3>Don't have an account <a (click)="toggleLoginPage('login')">Sign Up</a></h3>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  placeholder="Email"
+                  input
+                  type="email"
+                  formControlName="user_email"
+                />
+                <mat-icon matSuffix>email</mat-icon>
+
+                <mat-error
+                  *ngIf="
+                    loginForm.get('user_email')?.hasError('pattern') &&
+                    !loginForm.get('user_email')?.hasError('required')
+                  "
+                >
+                  Please enter a valid email address
+                </mat-error>
+              </mat-form-field>
+
+              <div class="Password">
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input
+                    matInput
+                    [type]="hide ? 'password' : 'text'"
+                    formControlName="user_password"
+                  />
+                  <mat-icon
+                    matSuffix
+                    class="icon-cursor"
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                    >{{ hide ? "visibility_off" : "visibility" }}</mat-icon
+                  >
+                  <mat-error
+                    *ngIf="loginForm.get('user_password')?.hasError('required')"
+                  >
+                    Password is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <!-- <div class="checkbox form-group clearfix">
+                <div class="form-check float-start">Don't have an account?</div>
+                <a
+                  (click)="toggleLoginPage('login')"
+                  class="float-end forgot-password"
+                  >Register</a
+                >
+              </div> -->
+              <div class="form-group clearfix">
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-primary btn-theme"
+                  [disabled]="loginForm.invalid"
+                >
+                  <span>Sign In</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!isloginPage" class="col-lg-5 col-md-12 form-section">
+        <div class="login-inner-form">
+          <div class="details">
+            <div>
+              <div class="main-logo">
+                <a href="#"><img src="./../assets/Outlook-syoft.com.png" /></a>
+              </div>
+              <h1>SignUp</h1>
+              <h3>Already have an account <a (click)="toggleLoginPage()">Sign in</a></h3>
+            </div>
+            <form [formGroup]="registationForm" (ngSubmit)="onSubmitRegister()">
+              <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input
+                  matInput
+                  placeholder="First Name"
+                  input
+                  type="text"
+                  formControlName="user_firstname"
+                />
+                <mat-error
+                  *ngIf="
+                    registationForm.get('user_firstname')?.hasError('required')
+                  "
+                >
+                  First Name is required
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  placeholder="Email"
+                  input
+                  type="email"
+                  formControlName="user_email"
+                />
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error
+                  *ngIf="
+                    registationForm.get('user_email')?.hasError('required')
+                  "
+                >
+                  Email address is required
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    registationForm.get('user_email')?.hasError('pattern') &&
+                    !registationForm.get('user_email')?.hasError('required')
+                  "
+                >
+                  Please enter a valid email address
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input
+                  matInput
+                  placeholder="Phone"
+                  input
+                  type="text"
+                  formControlName="user_phone"
+                />
+                <mat-error
+                  *ngIf="
+                    registationForm.get('user_phone')?.hasError('required')
+                  "
+                >
+                  Phone number is required
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    registationForm.get('user_phone')?.hasError('pattern') &&
+                    !registationForm.get('user_phone')?.hasError('required')
+                  "
+                >
+                  Please enter valid Phone number
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  placeholder="Password"
+                  input
+                  [type]="hidePassword ? 'password' : 'text'"
+                  formControlName="user_password"
+                />
+                <mat-icon
+                  matSuffix
+                  class="icon-cursor"
+                  (click)="hidePassword = !hidePassword"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hidePassword"
+                >
+                  {{ hidePassword ? "visibility_off" : "visibility" }}
+                </mat-icon>
+                <mat-error
+                  *ngIf="
+                    registationForm.get('user_password')?.hasError('required')
+                  "
+                >
+                  Password is required
+                </mat-error>
+                <mat-error
+                *ngIf="
+                  !registationForm.get('user_password')?.hasError('required') && registationForm.get('user_password')?.hasError('pattern')
+                "
+              >
+               Strong password is required
+              </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input
+                  matInput
+                  placeholder="Confirm Password"
+                  input
+                  [type]="hideConfirmPassword ? 'password' : 'text'"
+                  formControlName="confirm_password"
+                />
+                <mat-icon
+                  matSuffix
+                  class="icon-cursor"
+                  (click)="hideConfirmPassword = !hideConfirmPassword"
+                  [attr.aria-label]="'Hide confirm password'"
+                  [attr.aria-pressed]="hideConfirmPassword"
+                >
+                  {{ hideConfirmPassword ? "visibility_off" : "visibility" }}
+                </mat-icon>
+                <!-- <mat-error *ngIf="PwdError">
+                  {{PwdError}}
+                </mat-error> -->
+                <mat-error
+                  *ngIf="
+                    registationForm
+                      .get('confirm_password')
+                      ?.hasError('required')
+                  "
+                >
+                  Confirm Password is required
+                </mat-error>
+                <div class="error" *ngIf="PwdError">{{PwdError}}</div>
+              </mat-form-field>
+                            
+              <div class="form-group clearfix">
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-primary btn-theme"
+                  [disabled]="false"
+                >
+                  <span>Register</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

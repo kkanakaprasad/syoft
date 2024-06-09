@@ -1,0 +1,479 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #f3f4f9;
+
+  &::before {
+    color: '';
+  }
+}
+
+a {
+  color: #4154f1;
+  text-decoration: none;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid rgb(206, 202, 202);
+  // text-transform: capitalize;
+  font-size: 14px;
+}
+
+.pdr-0 {
+  padding-right: 0 !important;
+}
+
+.img-fluid {
+  max-width: 100% !important;
+  height: auto;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Jost', sans-serif;
+}
+
+/*logic css */
+/** Login 12 start **/
+.login-12 .login-inner-form .col-pad-0 {
+  padding: 0;
+}
+
+.login-12 .bg-img {
+//   background: url(./assets/images/login_bg.png) center center repeat;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  min-height: 100vh;
+  z-index: 999;
+  opacity: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 50px 50px 30px 40px;
+}
+
+.login-12 .bg-img:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #252B48;
+}
+
+.login-12 .bg-img:after {
+  content: "";
+  right: 0;
+  top: 35%;
+  position: absolute;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 20px solid #fff;
+  border-bottom: 15px solid transparent;
+  // background: url(assets/img/download.svg) repeat;
+}
+
+.login-12 h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Jost', sans-serif;
+}
+
+.login-12 .mat-form-field {
+  width: 100%;
+}
+
+.login-12 .form-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #fff;
+}
+
+.login-12 .login-inner-form {
+  max-width: 500px;
+  width: 100%;
+  text-align: start;
+}
+
+.login-inner-form .details {
+  position: relative;
+}
+
+.login-12 .login-inner-form p {
+  color: #535353;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.login-12 .login-inner-form p a {
+  color: #535353;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.login-12  img {
+  width: 180px;
+}
+
+.login-12 .login-inner-form h1 {
+  font-size: 30px;
+  color: #f57f29;
+  margin-block: 5px;
+  font-weight: 500;
+}
+
+.login-12 .login-inner-form h3 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #040404;
+}
+
+.login-12 label {
+  color: #535353;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.login-12 .login-inner-form .form-group {
+  margin-bottom: 25px;
+}
+
+.login-12 .login-inner-form .form-control {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #d6d6d675;
+  background: #fff;
+  outline: none;
+  color: #535353;
+  border-radius: 0;
+}
+
+.login-12 .login-inner-form .input-text label {
+  color: #535353;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.login-12 .login-inner-form .form-check {
+  float: left;
+  margin-bottom: 0;
+}
+
+.login-12 .login-inner-form .form-check a {
+  color: #535353;
+  float: right;
+}
+
+.login-12 .login-inner-form .checkbox {
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.login-12 .login-inner-form .form-check-input {
+  position: absolute;
+  margin-left: -24px;
+}
+
+.login-12 .login-inner-form .checkbox a {
+  font-size: 16px;
+  color: #535353;
+  float: right;
+}
+
+.login-12 a {
+  text-decoration: none;
+}
+
+.login-12 .form-section .form-check-label {
+  padding-left: 5px;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #535353;
+}
+
+.login-12 .form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  border: 1px solid #afabab;
+}
+
+.login-12 .login-inner-form .terms {
+  margin-left: 4px;
+}
+
+.login-12 .form-check-input:focus {
+  border-color: #ffc801 !important;
+  outline: 0;
+  box-shadow: none;
+}
+
+.login-12 .form-check-input:checked {
+  background-color: #ffc801 !important;
+}
+
+.login-12 .login-inner-form button:focus {
+  outline: none;
+  outline: 0 auto -webkit-focus-ring-color;
+}
+
+.login-12 .btn-theme {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: #ffffff;
+  overflow: hidden;
+  overflow: hidden;
+  text-transform: capitalize;
+  display: inline-block;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: 'Jost', sans-serif;
+  border-radius: 0;
+  border: none;
+}
+
+.login-12 .btn-theme:hover {
+  color: #fff;
+}
+
+.login-12 .btn-theme:hover::before {
+  left: 0%;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.login-12 .btn-theme:before {
+  position: absolute;
+  content: '';
+  left: 80%;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 1;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  transform: skewX(336deg);
+}
+
+.login-12 .btn-theme span {
+  position: relative;
+  z-index: 1;
+}
+
+.login-12 .informeson {
+  color: #fff;
+  max-width: 400px;
+  z-index: 20;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.login-12 .informeson h2 {
+  margin: 0 0 20px 0;
+  font-size: 48px;
+  color: #fff;
+  /* text-shadow: 2px 1px 1px #702000; */
+  line-height: 62px;
+  text-transform: uppercase;
+
+}
+
+.login-12 .btn-section {
+  margin-bottom: 30px;
+}
+
+
+
+.login-12 .informeson p {
+  color: #fff;
+  opacity: 0.9;
+  line-height: 25px;
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.login-12 .main-logo {
+  // position: absolute;
+  // right: 0;
+
+  img {
+    width: 100px;
+  }
+}
+
+.login-12  {
+  text-align: center;
+}
+
+
+.login-12 mat-form-field {
+    width: 100% !important;
+  }
+.login-12 .btn-theme-2 {
+  padding: 0 35px;
+  display: inline-block;
+  position: relative;
+  z-index: 5;
+  transition: .7s ease;
+  background: transparent;
+  line-height: 41px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Jost', sans-serif;
+  border-radius: 0;
+}
+
+.login-12 .btn-theme-2:hover {
+  color: #fff;
+}
+
+.btn-theme-2:before,
+.btn-theme-2:after {
+  color: #fff;
+}
+
+.login-12 .btn-theme-2:before,
+.btn-theme-2:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: all .7s ease;
+  border-radius: 0;
+}
+
+.login-12 .btn-theme-2:after,
+.btn-theme-2:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: all .7s ease;
+  border-radius: 0;
+}
+
+.login-12 .btn-theme-2:hover:before,
+.btn-theme-2:hover:after {
+  width: 50%;
+}
+
+.login-12 .btn-theme-2 {
+  border: 2px solid #ffc801;
+  border-radius: 0;
+  color: #ffc801;
+}
+
+.login-12 .btn-theme-2:before,
+.btn-theme-2:after {
+  background: #ffc801;
+}
+
+
+
+.login-12 .btn-lg {
+  padding: 0 50px;
+  line-height: 55px;
+}
+
+.login-12 .btn {
+  box-shadow: none !important;
+}
+
+.login-12 .btn-md {
+  padding: 0 45px;
+  line-height: 50px;
+}
+
+.login-12 .btn-primary {
+  background: #f57f29;
+}
+
+.login-12 .btn-primary:before {
+  background: #bd642370;
+}
+
+.login-4 .form-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+
+.org_mob_icon {
+  display: none;
+}
