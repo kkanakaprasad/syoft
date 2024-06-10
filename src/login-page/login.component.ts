@@ -54,10 +54,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
       user_email: ['', [Validators.required, Validators.pattern(REG_EXP_PATTERNS.EmailPattern)]],
       user_phone: ['', [Validators.required,Validators.pattern(REG_EXP_PATTERNS.MobilePattern),this.phoneNumberValidator()]],
       user_password: ['',[Validators.required, Validators.pattern(REG_EXP_PATTERNS.PasswordPattern)]],
-      user_lastname: ['ni'],
+      confirm_password: ['', [Validators.required]],
+      user_lastname: ['k'],
       user_city: ['Hyderabad'],
       user_zipcode: ['500072'],
-      confirm_password: ['', [Validators.required]],
+      user_address1: ['123, XYZ Street'], 
+      user_address2: ['ABC Building, Floor 2'], 
+      user_country: ['India'], 
+      user_state: ['Telangana'],
     }) 
   }
   
@@ -82,11 +86,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
     if (this.registationForm.valid && !this.PwdError) {
       this.loginService.regiter(this.registationForm.value).subscribe((res)=>{
             this.alertpopupService.open({
-              message :res.message,
+              message :res.msg,
               action : 'ok'
             })
-            this.router.navigate([RouteConstants.DASHBOARD])
-            
+            this.registationForm.reset();
+            this.loginForm.reset()
+            this.isloginPage =true;
           },(error)=>{
             this.alertpopupService.open({
               message :error.message ? error.message : 'Server Not Responding Please Try Again',
@@ -95,13 +100,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
           })
     } 
   }
+
   onSubmitLogin(){
     this.loginService.login(this.loginForm.value).subscribe((res)=>{
       this.storageService.clearLocalStorage();
-      this.storageService.setDataToLocalStorage(STORAGE_KEYS.ACCESS_TOKEN,res?.accessToken);
-      this.storageService.setDataToLocalStorage(STORAGE_KEYS.USER_ID,res?.userId);
+      this.storageService.setDataToLocalStorage(STORAGE_KEYS.USER_DATA,res?.user_data);
+      this.storageService.setDataToLocalStorage(STORAGE_KEYS.USER_ID,res?.user_data[0].user_id);
       this.alertpopupService.open({
-        message :res.message,
+        message :res.msg,
         action : 'ok'
       })
       this.router.navigate([RouteConstants.DASHBOARD])

@@ -132,6 +132,7 @@
                   type="text"
                   formControlName="user_firstname"
                 />
+                <mat-icon matSuffix>account_circle</mat-icon>
                 <mat-error
                   *ngIf="
                     registationForm.get('user_firstname')?.hasError('required')
@@ -176,6 +177,7 @@
                   [(phoneNumber)]="phoneNumber"
                   formControlName="user_phone"
                 />
+                <mat-icon matSuffix>phone</mat-icon> 
                 <mat-error
                   *ngIf="
                     registationForm.get('user_phone')?.hasError('required')

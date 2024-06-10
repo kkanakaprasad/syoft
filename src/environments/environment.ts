@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  BASE_URL : `https://snapkaro.com/eazyrooms_staging/api/`
+  BASE_URL : `https://eazyrooms-staging.codeace.us/api/`
 };
 
 /*

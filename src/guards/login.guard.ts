@@ -7,7 +7,7 @@ import { StorageService } from 'src/shared/storage-service/storage.service';
 export const loginGuard: CanActivateFn = (route, state) => {
   const storageService = inject(StorageService);
   const router = inject(Router);
-  const token = storageService.getDataFromLocalStorage(STORAGE_KEYS.ACCESS_TOKEN);
+  const token = storageService.getDataFromLocalStorage(STORAGE_KEYS.USER_DATA);
 
   if (token) {
     return true;
