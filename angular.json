@@ -51,7 +51,9 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/syoft/",
+              "deployUrl": "/syoft/"
             },
             "development": {
               "buildOptimizer": false,
