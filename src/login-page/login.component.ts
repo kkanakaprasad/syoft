@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, UntypedFormControl, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertpopupService } from '../shared/alertPopup/alertpopup.service';
@@ -13,7 +13,7 @@ import { STORAGE_KEYS } from 'src/enums/storage.enum';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
   hide: boolean= true
   loginForm!: FormGroup;
   registationForm!: FormGroup;
@@ -21,16 +21,22 @@ export class LoginComponent implements OnInit {
   hideConfirmPassword = true;
   hidePassword = true;
   PwdError: string='';
+  phoneNumber: any;
   constructor(private formBuilder: FormBuilder, 
     private loginService:LoginService,
     private storageService:StorageService,
     private alertpopupService: AlertpopupService,
+    private changeDetectorRef: ChangeDetectorRef,
     private router:Router) { 
   }
 
   ngOnInit(): void {
     this.loginFormDetails()
   
+  }
+
+  ngAfterViewInit() {
+    this.changeDetectorRef.detectChanges();
   }
 
   loginFormDetails(){
@@ -46,8 +52,8 @@ export class LoginComponent implements OnInit {
     this.registationForm = this.formBuilder.group({
       user_firstname: ['', [Validators.required]],
       user_email: ['', [Validators.required, Validators.pattern(REG_EXP_PATTERNS.EmailPattern)]],
-      user_phone: ['', [Validators.required,Validators.pattern(REG_EXP_PATTERNS.MobilePattern)]],
-      user_password: ['',[Validators.required, Validators.pattern(REG_EXP_PATTERNS.PasswordPattern),]],
+      user_phone: ['', [Validators.required,Validators.pattern(REG_EXP_PATTERNS.MobilePattern),this.phoneNumberValidator()]],
+      user_password: ['',[Validators.required, Validators.pattern(REG_EXP_PATTERNS.PasswordPattern)]],
       user_lastname: ['ni'],
       user_city: ['Hyderabad'],
       user_zipcode: ['500072'],
@@ -55,8 +61,12 @@ export class LoginComponent implements OnInit {
     }) 
   }
   
+  //returns latest value of phoneNumber
+  phoneNumberValidator() {
+    return (control: AbstractControl) => {
+      this. phoneNumber = control.value;
+  }}
   
-
   toggleLoginPage(arug?:string){
     if(arug ==='login'){
       this.loginForm.reset()
@@ -69,7 +79,6 @@ export class LoginComponent implements OnInit {
   }
  
   onSubmitRegister(): void {
-    this.PwdError = this.registationForm?.get('user_password')?.value!= this.registationForm?.get('confirm_password')?.value ?'Passwords do not match' :''
     if (this.registationForm.valid && !this.PwdError) {
       this.loginService.regiter(this.registationForm.value).subscribe((res)=>{
             this.alertpopupService.open({

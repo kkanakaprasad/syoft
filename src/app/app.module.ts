@@ -14,6 +14,7 @@ import { HomeComponent } from 'src/home/home.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MainComponent } from 'src/main/main.component';
+import { PhoneNumberDirective } from 'src/shared/phone-number.directive';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MainComponent } from 'src/main/main.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    PhoneNumberDirective
   ],
   imports: [
     BrowserModule,

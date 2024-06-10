@@ -173,8 +173,7 @@
                 <input
                   matInput
                   placeholder="Phone"
-                  input
-                  type="number"
+                  [(phoneNumber)]="phoneNumber"
                   formControlName="user_phone"
                 />
                 <mat-error
@@ -224,7 +223,7 @@
                   !registationForm.get('user_password')?.hasError('required') && registationForm.get('user_password')?.hasError('pattern')
                 "
               >
-               Strong password is required
+             must include at least one uppercase, lowercase, number, special character
               </mat-error>
               </mat-form-field>
 
@@ -246,9 +245,15 @@
                 >
                   {{ hideConfirmPassword ? "visibility_off" : "visibility" }}
                 </mat-icon>
-                <!-- <mat-error *ngIf="PwdError">
-                  {{PwdError}}
-                </mat-error> -->
+                <mat-error style="color: red" *ngIf="
+                registationForm
+                  .get('confirm_password')
+                  ?.value !==registationForm
+                  .get('user_password')
+                  ?.value !
+              ">
+                  Passwords do not match.
+                </mat-error>
                 <mat-error
                   *ngIf="
                     registationForm
@@ -258,7 +263,7 @@
                 >
                   Confirm Password is required
                 </mat-error>
-                <div class="error" *ngIf="PwdError">{{PwdError}}</div>
+                <!-- <div class="error" *ngIf="PwdError">{{PwdError}}</div> -->
               </mat-form-field>
                             
               <div class="form-group clearfix">
