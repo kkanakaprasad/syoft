@@ -267,7 +267,14 @@
                 </mat-error>
                 <!-- <div class="error" *ngIf="PwdError">{{PwdError}}</div> -->
               </mat-form-field>
-                            
+                       
+              <mat-checkbox formControlName="acceptTerms">
+                I accept the terms and conditions
+              </mat-checkbox>
+              <mat-error *ngIf="registationForm.get('acceptTerms')?.invalid && (registationForm.get('acceptTerms')?.touched || registationForm.get('acceptTerms')?.dirty || submited)">
+                Accepting terms and conditions is required
+              </mat-error>
+
               <div class="form-group clearfix">
                 <button
                   type="submit"

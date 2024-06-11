@@ -24,9 +24,9 @@ export class StorageService {
 getDataFromLocalStorage(item: any): any {
 
     if (item) {
-        const localData = localStorage.getItem(item);
+        const localData =localStorage.getItem(item);
         if (localData) {
-            return localData
+            return JSON.parse( localData)
         }
 
     }

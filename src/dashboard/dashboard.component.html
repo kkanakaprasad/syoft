@@ -1,1 +1,285 @@
-<h4>dashboard works!</h4>
+<nav>
+        
+    <div class="nav-left">
+        <h2 class="logo"><a href="#">Syoft</a></h2>
+        <ul>
+            <li class="icons-nav"><img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/notification.png?raw=true" alt="notification"></li>
+            <li class="icons-nav"><img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/inbox.png?raw=true" alt="notification"></li>
+            <li class="icons-nav"><img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/video.png?raw=true" alt="notification"></li>
+        </ul>
+    </div>
+    <div class="nav-right">
+        <div class="search-box">
+            <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/search.png?raw=true" alt="search">
+            <input type="text" placeholder="Search">
+        </div>
+        <button class="button" (click)="onLogout()">logout</button>
+        <div class="nav-user-icon online">
+            <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/profile-pic.png?raw=true" alt="profile-pic">
+        </div>
+
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="left-sidebar">
+      <div class="imp-links">
+        <a href="#">
+         
+          Latest News
+        </a>
+        <a href="#">
+  
+          Friends
+        </a>
+        <a href="#">
+          Group
+        </a>
+        <a href="#">
+          Market Place
+        </a>
+        <a href="#">
+          Watch
+        </a>
+        <a href="#">See More</a>
+      </div>
+      <div class="shortcut-links">
+        <p>Your Shortcuts</p>
+        <a href="#">
+          Web Developers
+        </a>
+        <a href="#">
+          Android Developers
+        </a>
+        <a href="#">
+          Web Design
+        </a>
+        <a href="#">
+          HTML And CSS
+        </a>
+      </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="story-gallery">
+            <div class="story story-1">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/video.png?raw=true" alt="post-story">
+                <p>Post Story</p>
+            </div>
+            <div class="story story-2">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/member-4.png?raw=true" alt="post-story">
+                <p>Ben Taylor</p>
+            </div>
+            <div class="story story-3">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/post-story-1%20(3).jpg?raw=true" alt="post-story">
+                <p>Sam Jason</p>
+            </div>
+            <div class="story story-4">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/animated-1.png?raw=true" alt="post-story">
+                <p>Ron Weasley</p>
+            </div>
+            <div class="story story-5">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/post-story-3.jpg?raw=true" alt="post-story">
+                <p>steve So</p>
+            </div>
+        </div>
+  
+        <div class="write-post-container">
+            <div class="user-profile">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/profile-pic.png?raw=true" alt="">
+                <div>
+                    <p>{{userDetails.user_firstname}}</p>
+                    <small>
+                        Public
+                        <i class="fas fa-caret-down"></i>
+                    </small>
+                </div>
+            </div>
+            <div class="post-input-conatiner">
+                <textarea rows="3" placeholder="What's you mind, {{userDetails.user_firstname}}"></textarea>
+                <div class="add-post-links">
+                    <a href="#"><img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/live-video.png?raw=true" alt="">Live Video</a>
+                    <a href="#"><img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/photo.png?raw=true" alt="">Phot/Video</a>
+                    <a href="#"><img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/feeling.png?raw=true" alt="">Feeling/Activity</a>
+                </div>
+            </div>
+        </div>
+  
+        <div class="post-container">
+            <div class="post-row">
+                <div class="user-profile">
+                    <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/profile-pic.png?raw=true" alt="">
+                    <div>
+                        <p>{{userDetails.User_name}}</p>
+                        <span>
+                            November 12, 02:00A.M
+                        </span>
+                    </div>
+                </div>
+                <a href="#"> <i class="fas fa-ellipsis-v"></i></a>
+            </div>
+  
+            <p class="post-text">Happy Birthday Ella <br><a href="#">#birthday-special</a></p>
+            <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/member-1.jpg?raw=true" alt="" class="post-img">
+  
+            <div class="post-row">
+                <div class="activity-icons">
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/like.png?raw=true" alt="">897K
+                    </div>
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/comments.png?raw=true" alt="">458K
+                    </div>
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/share.png?raw=true" alt="">243k
+                    </div>
+                </div>
+                <div class="post-profile-icon">
+                    <img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="post-row">
+                <div class="user-profile">
+                    <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/profile-pic.png?raw=true" alt="">
+                    <div>
+                        <p>{{userDetails.User_name}}</p>
+                        <span>
+                            November 12, 02:00A.M
+                        </span>
+                    </div>
+                </div>
+                <a href="#"> <i class="fas fa-ellipsis-v"></i></a>
+            </div>
+  
+            <p class="post-text">Happy Birthday Ella <br><a href="#">#birthday-special</a></p>
+            <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/member-1.jpg?raw=true" alt="" class="post-img">
+  
+            <div class="post-row">
+                <div class="activity-icons">
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/like.png?raw=true" alt="">897K
+                    </div>
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/comments.png?raw=true" alt="">458K
+                    </div>
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/share.png?raw=true" alt="">243k
+                    </div>
+                </div>
+                <div class="post-profile-icon">
+                    <img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+      <div class="post-container">
+            <div class="post-row">
+                <div class="user-profile">
+                    <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/profile-pic.png?raw=true" alt="">
+                    <div>
+                        <p>{{userDetails.User_name}}</p>
+                        <span>
+                            November 12, 02:00A.M
+                        </span>
+                    </div>
+                </div>
+                <a href="#"> <i class="fas fa-ellipsis-v"></i></a>
+            </div>
+  
+            <p class="post-text">Happy Birthday Ella <br><a href="#">#birthday-special</a></p>
+            <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/member-1.jpg?raw=true" alt="" class="post-img">
+  
+            <div class="post-row">
+                <div class="activity-icons">
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/like.png?raw=true" alt="">897K
+                    </div>
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/comments.png?raw=true" alt="">458K
+                    </div>
+                    <div>
+                        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/share.png?raw=true" alt="">243k
+                    </div>
+                </div>
+                <div class="post-profile-icon">
+                    <img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+        
+        <button type="button" class="load-more-btn">Load More</button>
+    </div>
+   
+    <div class="right-sidebar">
+        <div class="sidebar-title">
+            <h4>
+                Events
+            </h4>
+            <a href="#">
+                See All
+            </a>
+        </div>
+        <div class="event">
+            <div class="left-event">
+                <h3>18</h3>
+                <span>March</span>
+            </div>
+            <div class="right-event">
+                <h4>Social Media</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Willson Teck Park</p>
+                <a href="#">More Info</a>
+            </div>
+        </div>
+        <div class="event">
+            <div class="left-event">
+                <h3>22</h3>
+                <span>March</span>
+            </div>
+            <div class="right-event">
+                <h4>Mobile Marketimg</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Willson Teck Park</p>
+                <a href="#">More Info</a>
+            </div>
+        </div>
+        <div class="sidebar-title">
+            <h4>
+                Advertisement
+            </h4>
+            <a href="#">
+                Close
+            </a>
+        </div>
+        <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/advertisement.png?raw=true" alt="advt" class="sidebar-ads">
+        <div class="sidebar-title">
+            <h4>
+                Conversation
+            </h4>
+            <a href="#">
+                Hide Chat
+            </a>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/member-2.png?raw=true" alt="">
+            </div>
+            <p>Roy Clark</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/member-3.png?raw=true" alt="">
+            </div>
+            <p>Sieena Watson</p>
+        </div>
+        <div class="online-list">
+            <div class="online">
+                <img src="https://github.com/sanketbodke/sbook/blob/main/Socialbook_img/member-4.png?raw=true" alt="">
+            </div>
+            <p>Ben Taylor</p>
+        </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    sbook &copy; 2023, All Rights Reserved
+  </footer>

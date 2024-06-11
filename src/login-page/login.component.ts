@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   hidePassword = true;
   PwdError: string='';
   phoneNumber: any;
+  submited: boolean =false;
   constructor(private formBuilder: FormBuilder, 
     private loginService:LoginService,
     private storageService:StorageService,
@@ -55,6 +56,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       user_phone: ['', [Validators.required,Validators.pattern(REG_EXP_PATTERNS.MobilePattern),this.phoneNumberValidator()]],
       user_password: ['',[Validators.required, Validators.pattern(REG_EXP_PATTERNS.PasswordPattern)]],
       confirm_password: ['', [Validators.required]],
+      acceptTerms: [false, [Validators.requiredTrue]],
       user_lastname: ['k'],
       user_city: ['Hyderabad'],
       user_zipcode: ['500072'],
@@ -74,15 +76,18 @@ export class LoginComponent implements OnInit, AfterViewInit {
   toggleLoginPage(arug?:string){
     if(arug ==='login'){
       this.loginForm.reset()
+      this.submited=false
       this.registationFormDetails()
     this.isloginPage =false
   }else{
+    this.submited=false
     this.registationForm.reset()
     this.isloginPage =true
   }
   }
  
   onSubmitRegister(): void {
+    this.submited=true
     if (this.registationForm.valid && !this.PwdError) {
       this.loginService.regiter(this.registationForm.value).subscribe((res)=>{
             this.alertpopupService.open({
@@ -90,6 +95,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
               action : 'ok'
             })
             this.registationForm.reset();
+            this.submited=false
             this.loginForm.reset()
             this.isloginPage =true;
           },(error)=>{
